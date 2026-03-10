@@ -1,7 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 
 const SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "super_secret_key_para_jwt_actividad_daw2_2024"
+  process.env.JWT_SECRET || "super_secret_key_para_jwt_actividad_daw2_2026"
 );
 
 export interface UserPayload {
@@ -13,7 +13,7 @@ export async function signToken(payload: UserPayload): Promise<string> {
   return await new SignJWT({ ...payload })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime("2h")
+    .setExpirationTime("1h")
     .sign(SECRET);
 }
 
