@@ -1,7 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 
 const SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "super_secret_key_para_jwt_actividad_daw2_2026"
+  process.env.JWT_SECRET
 );
 
 export interface UserPayload {
